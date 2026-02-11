@@ -4,6 +4,14 @@
 
 # Enterprise Plugin
 
+[![CI](https://github.com/organvm-iii-ergon/enterprise-plugin/actions/workflows/ci.yml/badge.svg)](https://github.com/organvm-iii-ergon/enterprise-plugin/actions/workflows/ci.yml)
+[![Coverage](https://img.shields.io/badge/coverage-pending-lightgrey)](https://github.com/organvm-iii-ergon/enterprise-plugin)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/organvm-iii-ergon/enterprise-plugin/blob/main/LICENSE)
+[![Organ III](https://img.shields.io/badge/Organ-III%20Ergon-F59E0B)](https://github.com/organvm-iii-ergon)
+[![Status](https://img.shields.io/badge/status-active-brightgreen)](https://github.com/organvm-iii-ergon/enterprise-plugin)
+[![TypeScript](https://img.shields.io/badge/lang-TypeScript-informational)](https://github.com/organvm-iii-ergon/enterprise-plugin)
+
+
 **A modular plugin architecture for extending the ORGAN-III commerce ecosystem with custom integrations, third-party connectors, and enterprise-grade automation pipelines.**
 
 Enterprise Plugin provides the extensibility layer that allows every product in the ORGAN-III (Ergon) commerce organ to be enhanced, customized, and interconnected without modifying core application logic. It is the backbone of composability across the Ergon suite — the system that turns a collection of standalone products into a unified, extensible commerce platform.
