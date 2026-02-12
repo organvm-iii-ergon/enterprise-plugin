@@ -240,7 +240,7 @@ The pattern is consistent: each product defines contracts for its natural extens
 
 Enterprise Plugin operates within the broader eight-organ ORGANVM system. While it lives in ORGAN-III (Commerce), it has natural touchpoints with other organs:
 
-- **ORGAN-I (Theoria)** — [recursive-engine](https://github.com/organvm-i-theoria/recursive-engine) provides the recursive ontological framework that informs how plugin contracts are composed and versioned. The principle of self-similar structures at different scales directly influenced the nested contract model.
+- **ORGAN-I (Theoria)** — [recursive-engine](https://github.com/organvm-i-theoria/recursive-engine--generative-entity) provides the recursive ontological framework that informs how plugin contracts are composed and versioned. The principle of self-similar structures at different scales directly influenced the nested contract model.
 
 - **ORGAN-II (Poiesis)** — [metasystem-master](https://github.com/organvm-ii-poiesis/metasystem-master) explores systemic creativity and emergence. Enterprise Plugin's cross-product composability model — where novel behaviors emerge from combining simple plugins — draws on the same principles of emergent complexity from constrained interactions.
 
