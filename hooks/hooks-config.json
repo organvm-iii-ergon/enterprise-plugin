@@ -1,0 +1,131 @@
+{
+  "description": "Hooks for the enterprise-plugin to automate code formatting, validate prompts, manage sessions and control tool permissions.",
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"${CLAUDE_PROJECT_DIR}\"/.claude/hooks/check-style.sh",
+            "timeout": 15
+          }
+        ]
+      },
+      {
+        "matcher": "Bash|Grep|Read",
+        "hooks": [
+          {
+            "type": "prompt",
+            "prompt": "Before running $TOOL_NAME, verify that the command respects company policies. Respond with {\\\"decision\\\": \\\"allow\\\" or \\\"deny\\\", \\\"reason\\\": \\\"explanation\\\"}."
+          }
+        ]
+      }
+    ],
+    "PermissionRequest": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"${CLAUDE_PROJECT_DIR}\"/.claude/hooks/auto-approve.sh"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PLUGIN_ROOT}/scripts/format-code.sh",
+            "timeout": 30
+          }
+        ]
+      }
+    ],
+    "Notification": [
+      {
+        "matcher": "permission_prompt",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PLUGIN_ROOT}/scripts/notify-permission.sh"
+          }
+        ]
+      },
+      {
+        "matcher": "idle_prompt",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PLUGIN_ROOT}/scripts/notify-idle.sh"
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "prompt",
+            "prompt": "Validate the user prompt: $ARGUMENTS. Respond with {\\\"decision\\\": \\\"approve\\\" or \\\"block\\\", \\\"reason\\\": \\\"explanation\\\"} if the prompt is acceptable."
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "prompt",
+            "prompt": "Determine if Claude should stop working. Context: $ARGUMENTS. Respond with JSON {\\\"decision\\\": \\\"approve\\\" or \\\"block\\\", \\\"reason\\\": \\\"explanation\\\", \\\"continue\\\": false}"
+          }
+        ]
+      }
+    ],
+    "SubagentStop": [
+      {
+        "hooks": [
+          {
+            "type": "prompt",
+            "prompt": "Evaluate if this subagent has completed its tasks. Input: $ARGUMENTS. Respond with {\\\"decision\\\": \\\"approve\\\" or \\\"block\\\", \\\"reason\\\": \\\"explanation\\\"}."
+          }
+        ]
+      }
+    ],
+    "PreCompact": [
+      {
+        "matcher": "manual",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PLUGIN_ROOT}/scripts/precompact.sh",
+            "timeout": 20
+          }
+        ]
+      }
+    ],
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PLUGIN_ROOT}/scripts/session-start.sh"
+          }
+        ]
+      }
+    ],
+    "SessionEnd": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PLUGIN_ROOT}/scripts/session-end.sh"
+          }
+        ]
+      }
+    ]
+  }
+}

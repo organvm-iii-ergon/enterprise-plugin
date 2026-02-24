@@ -1,0 +1,21 @@
+{
+  "name": "enterprise-plugin",
+  "version": "1.0.0",
+  "description": "Example plugin demonstrating commands, agents, skills, hooks, and MCP servers.",
+  "author": {
+    "name": "Dev Team",
+    "email": "dev@company.com"
+  },
+  "homepage": "https://example.com/enterprise-plugin",
+  "repository": "https://github.com/example/enterprise-plugin",
+  "license": "MIT",
+  "keywords": ["example", "enterprise", "cli"],
+  "commands": [
+    "./commands/status.md",
+    "./commands/logs.md"
+  ],
+  "agents": "./agents/",
+  "skills": "./skills/",
+  "hooks": "./hooks/hooks.json",
+  "mcpServers": "./.mcp.json"
+}
