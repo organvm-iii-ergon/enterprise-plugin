@@ -1,3 +1,11 @@
+# CLAUDE.md — enterprise-plugin
+
+This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+
+## What This Is
+
+**ARCHIVED** — Claude Code plugin reference implementation. No longer maintained.
+
 <!-- ORGANVM:AUTO:START -->
 ## System Context (auto-generated — do not edit)
 
