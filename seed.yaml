@@ -1,24 +1,18 @@
-version: 1
-project:
-  name: enterprise-plugin
-  description: Auto-generated seed. Waiting for human intent.
-  owners:
-  - handle: labores-profani-crux
-    role: steward
-  repo:
-    org: labores-profani-crux
-    type: generic
-    role: commercial/product
-architecture:
-  tech_stack: []
-automation_contract:
-  ai_access:
-    read_paths:
-    - '**/*'
-    write_paths:
-    - src/**
-    - docs/**
-    - tests/**
-    disallowed_writes:
-    - .github/workflows/**
-    - seed.yaml
+# seed.yaml — Automation Contract for labores-profani-crux/enterprise-plugin
+# Schema: seed/v1.0
+
+schema_version: '1.0'
+organ: III
+organ_name: Commerce
+repo: enterprise-plugin
+org: labores-profani-crux
+metadata:
+  implementation_status: ARCHIVED
+  tier: archive
+  promotion_status: ARCHIVED
+  last_validated: '2026-03-08'
+produces:
+- type: artifact
+  description: "[ARCHIVED] Enterprise integration layer \u2014 concept absorbable\
+    \ into existing products"
+consumes: []
